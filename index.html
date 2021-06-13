@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dinographic</title>
+    <!-- Include Google fonts: Frijole, Open Sans, Oswald -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Frijole|Open+Sans|Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Normalize browser styles -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link href="app.css" rel="stylesheet" />
+    <!-- Link to app.js with defer till HTML render -->
+    <script src="scripts/prototype-enhancer.js"></script>
+    <script type="module" src="modules/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h2>Natural History Museum</h2>
+      <h1>Dinosaurs</h1>
+      <h3>How do you compare?</h3>
+    </header>
+    <main>
+    <!-- .grid to attach tiles to -->
+      <div id="grid" class="comparison-grid"></div>
+      <!-- Form to get user input -->
+      <form id="dino-compare" class="dino-compare-input">
+        <div class="form-container">
+          <div id="error" class="error"></div>
+          <div class="element">
+            <label for="name">Name:</label>
+            <div class="input">
+              <input id="name" type="text" name="name" />
+            </div>
+          </div>
+          <div class="element">
+            <label>Height:</label>
+            <div class="split-row">
+              <div class="split-row-cell">
+                <div class="element">
+                  <label for="feet" class="label">Feet:</label>
+                  <input class="input" id="feet" type="number" name="feet" />
+                </div>
+              </div>
+              <div class="split-row-cell">
+                <div class="element">
+                  <label for="inches" class="label">Inches:</label>
+                  <input
+                    id="inches"
+                    class="input"
+                    type="number"
+                    name="inches"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="element">
+            <label for="weight">Weight:</label>
+            <div class="input">
+              <input id="weight" type="number" name="weight" />
+            </div>
+            <span class="suffix">lbs</span>
+          </div>
+          <div class="element">
+            <label for="diet">Diet:</label>
+            <div class="dropdown">
+              <select id="diet" name="diet">
+                <option>Herbivore</option>
+                <option>Omnivore</option>
+                <option>Carnivore</option>
+              </select>
+            </div>
+          </div>
+          <button id="btn">Compare Me!</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <!-- Include information source -->
+      <p class="fine-print">
+        Data Sourced from
+        <a href="https://www.wikipedia.org/">Wikipedia.org</a>, all numbers are
+        approximations.
+      </p>
+    </footer>
+  </body>
+</html>

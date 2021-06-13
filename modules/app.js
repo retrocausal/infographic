@@ -97,7 +97,6 @@ class App {
     this.grid.innerHTML = "";
     const { layout } = this.state();
     layout.forEach((element) => {
-      console.log(element);
       const isHuman = HumanBeing.prototype.isPrototypeOf(element);
       const slot = Card(element);
       slot.compose();

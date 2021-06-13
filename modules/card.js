@@ -35,9 +35,7 @@ export default function Card(info) {
       );
       const factoid = document.createTextNode(`${info.currentFact()}`);
       fact.appendChild(factoid);
-    } catch (error) {
-      console.log(info);
-    }
+    } catch (error) {}
   }
 
   return {

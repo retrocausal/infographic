@@ -151,11 +151,19 @@ main {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 1s linear;
 }
+
+.grid-item:hover .info {
+  opacity: 1;
+}
+
 .grid-item .info .info-item {
   width: 50%;
   text-transform: capitalize;
   font-variant: all-small-caps;
+  font-size: 1.2em;
 }
 
 .grid-item .factoid {
@@ -326,13 +334,15 @@ select option {
 
 .visible {
   opacity: 1;
+  pointer-events: all;
 }
 .invisible {
   opacity: 0;
+  pointer-events: none;
 }
 #error {
   color: sienna;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-variant: all-small-caps;
   font-weight: bold;
   width: 100%;

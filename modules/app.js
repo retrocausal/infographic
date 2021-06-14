@@ -101,6 +101,7 @@ class App {
       const slot = Card(element);
       slot.compose();
       if (!isHuman) {
+        slot.attachInfo();
         slot.attachFact();
       }
     });
@@ -166,7 +167,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("error").innerText = error.message;
           }
         })
-        .catch((e) => console.warn(e));
+        .catch(
+          (e) =>
+            (document.getElementById("error").innerText =
+              "Could not fetch data")
+        );
     };
   })(instance);
 });
